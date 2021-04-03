@@ -36,6 +36,8 @@ namespace ConsignmentShopUI
             this.shoppingCartListBoxLabel = new System.Windows.Forms.Label();
             this.shoppingCartListBox = new System.Windows.Forms.ListBox();
             this.makePurchase = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // headerText
@@ -54,7 +56,7 @@ namespace ConsignmentShopUI
             this.itemsListBox.ItemHeight = 20;
             this.itemsListBox.Location = new System.Drawing.Point(23, 94);
             this.itemsListBox.Name = "itemsListBox";
-            this.itemsListBox.Size = new System.Drawing.Size(274, 264);
+            this.itemsListBox.Size = new System.Drawing.Size(274, 184);
             this.itemsListBox.TabIndex = 1;
             // 
             // itemsListBoxLabel
@@ -75,6 +77,7 @@ namespace ConsignmentShopUI
             this.addToCart.TabIndex = 3;
             this.addToCart.Text = "Add To Cart ->";
             this.addToCart.UseVisualStyleBackColor = true;
+            this.addToCart.Click += new System.EventHandler(this.addToCart_Click);
             // 
             // shoppingCartListBoxLabel
             // 
@@ -92,23 +95,45 @@ namespace ConsignmentShopUI
             this.shoppingCartListBox.ItemHeight = 20;
             this.shoppingCartListBox.Location = new System.Drawing.Point(514, 94);
             this.shoppingCartListBox.Name = "shoppingCartListBox";
-            this.shoppingCartListBox.Size = new System.Drawing.Size(274, 264);
+            this.shoppingCartListBox.Size = new System.Drawing.Size(274, 184);
             this.shoppingCartListBox.TabIndex = 4;
             // 
             // makePurchase
             // 
-            this.makePurchase.Location = new System.Drawing.Point(653, 364);
+            this.makePurchase.Location = new System.Drawing.Point(653, 284);
             this.makePurchase.Name = "makePurchase";
             this.makePurchase.Size = new System.Drawing.Size(135, 64);
             this.makePurchase.TabIndex = 6;
             this.makePurchase.Text = "Purchase";
             this.makePurchase.UseVisualStyleBackColor = true;
+            this.makePurchase.Click += new System.EventHandler(this.makePurchase_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(23, 286);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Store Items";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(23, 318);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(274, 184);
+            this.listBox1.TabIndex = 7;
             // 
             // ConsignmentShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 520);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.makePurchase);
             this.Controls.Add(this.shoppingCartListBoxLabel);
             this.Controls.Add(this.shoppingCartListBox);
@@ -133,6 +158,8 @@ namespace ConsignmentShopUI
         private System.Windows.Forms.Label shoppingCartListBoxLabel;
         private System.Windows.Forms.ListBox shoppingCartListBox;
         private System.Windows.Forms.Button makePurchase;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

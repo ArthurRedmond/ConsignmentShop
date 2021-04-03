@@ -14,18 +14,26 @@ namespace ConsignmentShopUI
     public partial class ConsignmentShop : Form
     {
         private Store store = new Store();
+        private List<Item> shoppingCartData = new List<Item>();
         BindingSource itemsBinding = new BindingSource();
+        BindingSource cartBinding = new BindingSource();
 
         public ConsignmentShop()
         {
             InitializeComponent();
             SetupData();
 
-            itemsBinding.DataSource = store.Items;
+            itemsBinding.DataSource = store.Items.Where( x => x.Sold == false).ToList();
             itemsListBox.DataSource = itemsBinding;
 
             itemsListBox.DisplayMember = "Display";
             itemsListBox.ValueMember = "Display";
+
+            cartBinding.DataSource = shoppingCartData;
+            shoppingCartListBox.DataSource = cartBinding;
+
+            shoppingCartListBox.DisplayMember = "Display";
+            shoppingCartListBox.ValueMember = "Display";
         }
 
         private void SetupData()
@@ -37,7 +45,7 @@ namespace ConsignmentShopUI
             {
                 Title = "Moby Dick",
                 Description = "A book about a whale",
-                Price = 4.5M,
+                Price = 4.50M,
                 Owner = store.Vendors[0]
             });
 
@@ -45,7 +53,7 @@ namespace ConsignmentShopUI
             {
                 Title = "A Tale of Two Cities",
                 Description = "A book about a revolution",
-                Price = 3.8M,
+                Price = 3.80M,
                 Owner = store.Vendors[1]
             });
 
@@ -53,7 +61,7 @@ namespace ConsignmentShopUI
             {
                 Title = "Harry Potter Book 1",
                 Description = "A book about a boy",
-                Price = 5.2M,
+                Price = 5.20M,
                 Owner = store.Vendors[1]
             });
 
@@ -61,11 +69,40 @@ namespace ConsignmentShopUI
             {
                 Title = "Jane Eyre",
                 Description = "A book about a girl",
-                Price = 1.5M,
+                Price = 1.50M,
                 Owner = store.Vendors[0]
             });
 
             store.Name = "Seconds are Better";
+        }
+
+        private void addToCart_Click(object sender, EventArgs e)
+        {
+            // Figure out what item has been selected from Item list
+            // Add that item to the shopping cart list
+            // Remove item from item list?
+            Item selectedItem = (Item)itemsListBox.SelectedItem;
+
+            shoppingCartData.Add(selectedItem);
+
+            cartBinding.ResetBindings(false);
+        }
+
+        private void makePurchase_Click(object sender, EventArgs e)
+        {
+            // Mark item as sold
+            // Clear the cart
+
+            foreach (Item item in shoppingCartData)
+            {
+                item.Sold = true;
+            }
+
+            itemsBinding.DataSource = store.Items.Where(x => x.Sold == false).ToList();
+            
+            cartBinding.Clear();
+            cartBinding.ResetBindings(false);
+            itemsBinding.ResetBindings(false);
         }
     }
 }
