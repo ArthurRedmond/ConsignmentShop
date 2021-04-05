@@ -39,7 +39,7 @@ namespace ConsignmentShopUI
             this.vendorListBoxLabel = new System.Windows.Forms.Label();
             this.vendorListBox = new System.Windows.Forms.ListBox();
             this.storeProfitLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.storeProfitValue = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // headerText
@@ -135,26 +135,26 @@ namespace ConsignmentShopUI
             this.storeProfitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.storeProfitLabel.Location = new System.Drawing.Point(514, 367);
             this.storeProfitLabel.Name = "storeProfitLabel";
-            this.storeProfitLabel.Size = new System.Drawing.Size(101, 20);
+            this.storeProfitLabel.Size = new System.Drawing.Size(106, 20);
             this.storeProfitLabel.TabIndex = 9;
-            this.storeProfitLabel.Text = "Store Profit";
+            this.storeProfitLabel.Text = "Store Profit:";
             // 
-            // label1
+            // storeProfitValue
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(636, 367);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Store Profit";
+            this.storeProfitValue.AutoSize = true;
+            this.storeProfitValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.storeProfitValue.Location = new System.Drawing.Point(653, 367);
+            this.storeProfitValue.Name = "storeProfitValue";
+            this.storeProfitValue.Size = new System.Drawing.Size(54, 20);
+            this.storeProfitValue.TabIndex = 10;
+            this.storeProfitValue.Text = "$0.00";
             // 
             // ConsignmentShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 520);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.storeProfitValue);
             this.Controls.Add(this.storeProfitLabel);
             this.Controls.Add(this.vendorListBoxLabel);
             this.Controls.Add(this.vendorListBox);
@@ -185,7 +185,7 @@ namespace ConsignmentShopUI
         private System.Windows.Forms.Label vendorListBoxLabel;
         private System.Windows.Forms.ListBox vendorListBox;
         private System.Windows.Forms.Label storeProfitLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label storeProfitValue;
     }
 }
 
